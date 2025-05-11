@@ -30,6 +30,65 @@
         border-color: #ffcb08 !important;
       }
     </style>
+    <script>
+      function play() {
+        const main = document.querySelector("main");
+
+        main.innerHTML = `
+            <progress
+                id="unity-progressbar"
+                style="position: absolute"
+                value="0"
+                max="100"
+            ></progress>
+            <canvas
+                id="unity-canvas"
+                width="1920"
+                height="1080"
+                style="width: 1280px; height: 720px"
+                tabIndex="-1"
+            ></canvas>
+        `;
+
+        if (/iPhone | iPad | iPod | Android/i.test(navigator.userAgent)) {
+          // Mobile device style: fill the whole browser client area with the game canvas:
+          const meta = document.createElement("meta");
+          meta.name = "viewport";
+          meta.content =
+            "width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes";
+          document.getElementsByTagName("head")[0].appendChild(meta);
+
+          const canvas = document.querySelector("#unity-canvas");
+          canvas.style.width = "100%";
+          canvas.style.height = "100%";
+          canvas.style.position = "fixed";
+        }
+
+        createUnityInstance(
+          document.querySelector("#unity-canvas"),
+          {
+            arguments: [],
+            dataUrl:
+              "https://xn-cp-fka-com.s3.us-east-1.amazonaws.com/StreamFighter.data.br",
+            frameworkUrl:
+              "https://xn-cp-fka-com.s3.us-east-1.amazonaws.com/StreamFighter.framework.js.br",
+            codeUrl:
+              "https://xn-cp-fka-com.s3.us-east-1.amazonaws.com/StreamFighter.wasm.br",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "Cöpcom",
+            productName: "Stream Fighter",
+            productVersion: "1.0.0",
+            matchWebGLToCanvasSize: false,
+            // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+          },
+          (progress) => {
+            document.querySelector("#unity-progressbar").value = 100 * progress;
+          }
+        ).then(() => {
+          document.querySelector("#unity-progressbar").style.display = "none";
+        });
+      }
+    </script>
   </head>
   <body>
     <div
@@ -45,19 +104,6 @@
           position: relative;
         "
       >
-        <!-- <progress
-      id="unity-progressbar"
-      className="absolute"
-      value={0}
-      max={100}
-    ></progress>
-    <canvas
-      id="unity-canvas"
-      width={1920}
-      height={1080}
-      style={{ width: "1280px", height: "720px" }}
-      tabIndex={-1}
-    ></canvas> -->
         <img
           aria-hidden
           src="/streamfighter.png"
@@ -77,7 +123,7 @@
             color: #f1f1f1;
           "
           role="button"
-          onClick="setPlayInBrowser(true)"
+          onClick="play()"
         >
           Play in Browser
         </button>
