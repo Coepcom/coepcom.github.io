@@ -63,8 +63,10 @@
             border-radius: 0.5rem;
             border: 2px solid #fff;
             padding: 1rem 1.5rem;
+            font-size: 1rem;
             font-weight: bold;
             background-color: #0c4da2;
+            color: #f1f1f1;
           "
           role="button"
           onClick="setPlayInBrowser(true)"
@@ -73,35 +75,37 @@
         </button>
         <script src="https://xn-cp-fka-com.s3.us-east-1.amazonaws.com/StreamFighter.loader.js"></script>
       </main>
-      <div className="text-center space-y-8 p-8">
-        <h3 className="text-lg font-bold">Verpackungsoptionen</h3>
-        <div className="flex space-x-8 justify-center">
-          <div className="flex flex-col">
+      <div style="text-align: center; padding: 2rem">
+        <h3 style="font-size: 1.5rem; font-weight: bold">
+          Verpackungsoptionen
+        </h3>
+        <div style="display: flex; justify-items: center">
+          <div style="display: flex; flex-direction: column">
             <a
               className="hover:text-[#ffcb08]"
               href="https://github.com/Coepcom/Stream-Fighter/releases/download/1.0.0/StreamFighter.zip"
             >
               Download for Windows
             </a>
-            <span className="text-xs">683 MB</span>
+            <span style="font-size: 0.75rem">683 MB</span>
           </div>
-          <div className="flex flex-col">
+          <div style="display: flex; flex-direction: column">
             <a
               className="hover:text-[#ffcb08]"
               href="https://github.com/Coepcom/Stream-Fighter/releases/download/1.0.0/StreamFighter.dmg"
             >
               Download for macOS
             </a>
-            <span className="text-xs">727 MB</span>
+            <span style="font-size: 0.75rem">727 MB</span>
           </div>
-          <div className="flex flex-col">
+          <div style="display: flex; flex-direction: column">
             <a
               className="hover:text-[#ffcb08]"
               href="https://github.com/Coepcom/Stream-Fighter"
             >
               Get Source Code
             </a>
-            <span className="text-xs">GitHub</span>
+            <span style="font-size: 0.75rem">GitHub</span>
           </div>
         </div>
       </div>
