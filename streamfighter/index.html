@@ -31,6 +31,7 @@
         style="
           flex-grow: 1;
           display: flex;
+          flex-direction: column;
           align-items: center;
           justify-content: space-around;
           position: relative;
@@ -57,7 +58,14 @@
           height="198"
         />
         <button
-          className="cursor-pointer rounded-lg border-2 border-white p-4 px-6 font-bold bg-[#0c4da2] enabled:hover:border-[#ffcb08] disabled:opacity-25"
+          style="
+            cursor: pointer;
+            border-radius: 0.5rem;
+            border: 2px solid #fff;
+            padding: 1rem 1.5rem;
+            font-weight: bold;
+            background-color: #0c4da2;
+          "
           role="button"
           onClick="setPlayInBrowser(true)"
         >
