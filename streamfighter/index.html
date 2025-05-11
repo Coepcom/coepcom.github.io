@@ -32,9 +32,71 @@
           flex-grow: 1;
           display: flex;
           align-items: center;
-          justify-content: center;
+          justify-content: space-around;
+          position: relative;
         "
-      ></main>
+      >
+        <!-- <progress
+      id="unity-progressbar"
+      className="absolute"
+      value={0}
+      max={100}
+    ></progress>
+    <canvas
+      id="unity-canvas"
+      width={1920}
+      height={1080}
+      style={{ width: "1280px", height: "720px" }}
+      tabIndex={-1}
+    ></canvas> -->
+        <img
+          aria-hidden
+          src="/streamfighter.png"
+          alt="Stream Fighter"
+          width="480"
+          height="198"
+        />
+        <button
+          className="cursor-pointer rounded-lg border-2 border-white p-4 px-6 font-bold bg-[#0c4da2] enabled:hover:border-[#ffcb08] disabled:opacity-25"
+          role="button"
+          onClick="setPlayInBrowser(true)"
+        >
+          Play in Browser
+        </button>
+        <script src="https://xn-cp-fka-com.s3.us-east-1.amazonaws.com/StreamFighter.loader.js"></script>
+      </main>
+      <div className="text-center space-y-8 p-8">
+        <h3 className="text-lg font-bold">Verpackungsoptionen</h3>
+        <div className="flex space-x-8 justify-center">
+          <div className="flex flex-col">
+            <a
+              className="hover:text-[#ffcb08]"
+              href="https://github.com/Coepcom/Stream-Fighter/releases/download/1.0.0/StreamFighter.zip"
+            >
+              Download for Windows
+            </a>
+            <span className="text-xs">683 MB</span>
+          </div>
+          <div className="flex flex-col">
+            <a
+              className="hover:text-[#ffcb08]"
+              href="https://github.com/Coepcom/Stream-Fighter/releases/download/1.0.0/StreamFighter.dmg"
+            >
+              Download for macOS
+            </a>
+            <span className="text-xs">727 MB</span>
+          </div>
+          <div className="flex flex-col">
+            <a
+              className="hover:text-[#ffcb08]"
+              href="https://github.com/Coepcom/Stream-Fighter"
+            >
+              Get Source Code
+            </a>
+            <span className="text-xs">GitHub</span>
+          </div>
+        </div>
+      </div>
       <footer
         style="
           padding: 1rem;
