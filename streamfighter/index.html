@@ -21,6 +21,14 @@
       progress::-webkit-progress-value {
         background: #f1f1f1;
       }
+
+      a:hover {
+        color: #ffcb08;
+      }
+
+      button:hover {
+        border-color: #ffcb08;
+      }
     </style>
   </head>
   <body>
@@ -79,10 +87,10 @@
         <h3 style="font-size: 1.5rem; font-weight: bold">
           Verpackungsoptionen
         </h3>
-        <div style="display: flex; align-items: center; gap: 2rem">
+        <div style="display: flex; justify-content: center; gap: 2rem">
           <div style="display: flex; flex-direction: column">
             <a
-              className="hover:text-[#ffcb08]"
+              style="text-decoration: none; color: #f1f1f1"
               href="https://github.com/Coepcom/Stream-Fighter/releases/download/1.0.0/StreamFighter.zip"
             >
               Download for Windows
@@ -91,7 +99,7 @@
           </div>
           <div style="display: flex; flex-direction: column">
             <a
-              className="hover:text-[#ffcb08]"
+              style="text-decoration: none; color: #f1f1f1"
               href="https://github.com/Coepcom/Stream-Fighter/releases/download/1.0.0/StreamFighter.dmg"
             >
               Download for macOS
@@ -100,7 +108,7 @@
           </div>
           <div style="display: flex; flex-direction: column">
             <a
-              className="hover:text-[#ffcb08]"
+              style="text-decoration: none; color: #f1f1f1"
               href="https://github.com/Coepcom/Stream-Fighter"
             >
               Get Source Code
